@@ -1,0 +1,153 @@
+[
+  {
+    "description": "模拟一个没有参数的get请求",
+    "request": {
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "这是一个没有参数的get请求",
+      "headers": {
+        "Content-Type":"text/html;charset=utf-8"
+      }
+    }
+  },{
+    "description": "模拟一个带参数的get请求",
+    "request": {
+      "uri": "/getwithparam",
+      "method": "get",
+      "queries": {
+        "name": "hzy",
+        "age": "25"
+      }
+    },
+    "response": {
+      "text": "李狗蛋今年25岁!"
+    }
+
+  },{
+    "description": "模拟一个post请求",
+    "request": {
+      "uri": "/postdemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "这是一个post请求"
+    }
+
+
+  },
+  {
+    "description": "模拟带参数的post请求",
+    "request": {
+      "uri": "/postwithparam",
+      "method": "post",
+      "forms": {
+        "name": "hzy",
+        "sex": "man"
+      }
+    },
+    "response": {
+      "text": "带参数的返回值"
+    }
+
+
+  },
+  {
+    "description": "这是一个带cookies信息的get请求",
+    "request": {
+      "uri": "/get/with/cookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "这是一个需要cookies才能访问的get请求"
+    }
+  },
+  {
+    "description": "这是一个带cookies信息的post请求",
+    "request": {
+      "uri": "/post/with/cookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "hzy",
+        "age": "25"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "hzy": "success",
+        "status": "1"
+      }
+    }
+  },
+  {
+    "description": "这是一个带headers的post请求",
+    "request": {
+      "uri": "/post/with/headers",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "headers": {
+        "content-type": "application/json;charset=utf-8"
+      },
+      "json": {
+        "name": "hzy",
+        "sex": "man"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "hzy": "success",
+        "status": "1"
+      }
+    }
+  },
+  {
+    "description": "重定向到百度",
+    "request": {
+      "uri": "/redirect"
+    },
+    "redirectTo": "http://www.baidu.com"
+  },
+  {
+    "description": "重定向到自己的网页",
+    "request": {
+      "uri": "/redirect/topath"
+    },
+    "redirectTo": "/redirect/new"
+  },
+  {
+    "description": "被重定向的请求",
+    "request": {
+      "uri": "/redirect/new"
+    },
+    "response": {
+      "text": "重定向成功"
+    }
+  },
+  {
+    "description": "这是一个会返回cookies信息的get请求",
+    "request": {
+      "uri": "/getCookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "login": "true"
+      },
+      "text": "获取cookies信息成功"
+    }
+
+  }
+
+
+]

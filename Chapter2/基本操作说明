@@ -1,0 +1,1 @@
+java -jar ./moco-runner-1.1.0-standalone.jar http（配置协议） -p 7777（端口号） -c startup1.json(json配置文件)

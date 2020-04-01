@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="com.yonyou.model">
+
+    <!--获取登录用例数-->
+    <select id="loginCount" resultType="Integer">
+        select count(*) from login;
+    </select>
+
+    <!--获取登录接口请求case-->
+    <select id="loginCaseRequest" parameterType="Integer" resultType="com.yonyou.model.LoginCase">
+        select username,password from login where id = #{id};
+    </select>
+
+    <!--获取登录接口响应case-->
+    <select id="loginCaseResponse" parameterType="Integer" resultType="com.yonyou.model.LoginCase">
+        select text,status from login where id = #{id};
+    </select>
+
+    <!--获取get用例数-->
+    <select id="getWithParamCount" resultType="Integer">
+        select count(*) from getwithparam;
+    </select>
+
+    <!--获取get接口请求case-->
+    <select id="getWithParamCaseRequest" parameterType="Integer" resultType="com.yonyou.model.GetWithParamCase">
+        select name from getwithparam where id = #{id};
+    </select>
+
+    <!--获取get接口响应case-->
+    <select id="getWithParamCaseResponse" parameterType="Integer" resultType="com.yonyou.model.GetWithParamCase">
+        select text,status from getwithparam where id = #{id};
+    </select>
+
+
+</mapper>

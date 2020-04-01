@@ -1,0 +1,117 @@
+[
+  {
+    "description": "无参数的get请求",
+    "request": {
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      },
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "访问成功",
+      "status": "01",
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    }
+  },
+  {
+    "description": "有参数的get请求",
+    "request": {
+      "uri": "/getwithparam",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      },
+      "queries": {
+        "name": "hzy"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    },
+    "response": {
+      "text": "访问成功",
+      "status": "01",
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    }
+  },
+  {
+    "description": "登录成功",
+    "request": {
+      "uri": "/login",
+      "method": "post",
+      "json": {
+        "username": "hzy",
+        "password": "123"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    },
+    "response": {
+      "json": {
+        "text": "success",
+        "status": "01"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    }
+  },
+  {
+    "description": "登录失败1",
+    "request": {
+      "uri": "/login",
+      "method": "post",
+      "json": {
+        "username": "hzy",
+        "password": "123456"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    },
+    "response": {
+      "json": {
+        "text": "fail",
+        "status": "02"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    }
+  },
+  {
+    "description": "登录失败2",
+    "request": {
+      "uri": "/login",
+      "method": "post",
+      "json": {
+        "username": "123",
+        "password": "hzy"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    },
+    "response": {
+      "json": {
+        "text": "fail",
+        "status": "02"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    }
+  }
+
+
+
+]

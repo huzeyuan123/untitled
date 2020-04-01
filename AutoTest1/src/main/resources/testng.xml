@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name = "接口测试">
+    <test name = "登录测试用例">
+        <classes>
+            <class name = "com.yonyou.cases.LoginTest">
+                <method>
+                    <include name = "login"/>
+                </method>
+            </class>
+
+        </classes>
+    </test>
+    <test name = "get请求测试用例">
+        <classes>
+            <class name = "com.yonyou.cases.GetWithParamTest">
+                <method>
+                    <include name = "getWithParam"/>
+                </method>
+            </class>
+        </classes>
+
+    </test>
+
+    <listeners>
+        <listener class-name="com.yonyou.config.ExtentTestNGIReporterListener" />
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+
+</suite>
